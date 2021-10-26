@@ -71,15 +71,3 @@ elif corp == "album":
     # et musicReleaseGroupID en musicreleasegroupid
     Bonne_Balise(args.Fichier,path)
     traitement_Album(nom_rep,path)
-elif corp == "Renum":
-    #renumerotation des artistes
-    Renum_Artist(nom_rep,path)
-elif corp == "Check_Genre":
-    #ecriture dans Check_Genre.txt
-    #verification des liaisons artist/genre , albulm/genre et song/genre
-    traitement_Genre(nom_rep,path)
-else:
-    #lecture du fichier XXXXX.nfo donc artist dans 1 sous-repertoire album
-    #il n'y a pas d'artist avec ce nom en tant que tel : juste pour avoir des infos
-    #il doit y avoir aussi un fcihier XXXXX.jpg pour le thumb de ce guest!
-	traitement_Guest(corp,path)
