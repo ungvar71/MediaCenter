@@ -37,3 +37,7 @@ DELETE FROM album_artist WHERE album_artist.idAlbum  NOT IN (SELECT album.idAlbu
 ou 
 SELECT * FROM album_artist WHERE album_artist.idAlbum  NOT IN (SELECT album.idAlbum  FROM album WHERE album.idAlbum IS NOT NULL)
 
+#Purge artist sans lien avec album_artist
+DELETE FROM artist WHERE artist.idArtist  NOT IN (SELECT album_artist.idArtist  FROM album_artist WHERE album_artist.idArtist IS NOT NULL)
+ou
+SELECT * FROM artist WHERE artist.idArtist  NOT IN (SELECT album_artist.idArtist  FROM album_artist WHERE album_artist.idArtist IS NOT NULL)
