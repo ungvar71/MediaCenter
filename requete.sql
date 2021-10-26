@@ -31,3 +31,9 @@ WHERE  s.idSong = sg.idSong
 AND    sg.idGenre = g.idGenre
 AND    s.strGenres <> a.strGenres 
 AND    s.strArtistDisp  = a.strArtist
+
+#Purge album_artist sans lien avec un album
+DELETE FROM album_artist WHERE album_artist.idAlbum  NOT IN (SELECT album.idAlbum  FROM album WHERE album.idAlbum IS NOT NULL)
+ou 
+SELECT * FROM album_artist WHERE album_artist.idAlbum  NOT IN (SELECT album.idAlbum  FROM album WHERE album.idAlbum IS NOT NULL)
+
